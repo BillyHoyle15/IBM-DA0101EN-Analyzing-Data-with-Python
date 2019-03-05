@@ -27,7 +27,7 @@ Pandas Library so that all we need to do is import Pandas without installing.
 import pandas as pd
 
 '''
-Read Data¶
+Read Data
 We use pandas.read_csv() function to read the csv file. In the bracket, 
 we put the file path along with a quotation mark, so that pandas will read 
 the file into a data frame from that address. The file path can be either an 
