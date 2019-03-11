@@ -59,4 +59,53 @@ print(df.corr())
 #Find the correlation between the following columns: 
 #bore, stroke,compression-ratio , and horsepower.
 
-print(df[['bore', 'stroke', 'compression-ratio', 'horsepower']].corr())  
+print(df[['bore', 'stroke', 'compression-ratio', 'horsepower']].corr())
+
+'''
+Continuous numerical variables:
+Continuous numerical variables are variables that may contain any value within 
+some range. Continuous numerical variables can have the type "int64" or 
+"float64". A great way to visualize these variables is by using scatterplots
+with fitted lines.
+
+In order to start understanding the (linear) relationship between an individual 
+variable and the price. We can do this by using "regplot", which plots the 
+scatterplot plus the fitted regression line for the data.
+
+Let's see several examples of different linear relationships:
+    
+Positive linear relationship
+Let's find the scatterplot of "engine-size" and "price"    
+'''
+# Engine size as potential predictor variable of price
+sns.regplot(x="engine-size", y="price", data=df)
+plt.ylim(0,)
+
+'''
+As the engine-size goes up, the price goes up: this indicates a positive 
+direct correlation between these two variables. Engine size seems like a 
+pretty good predictor of price since the regression line is almost a perfect 
+diagonal line.
+
+We can examine the correlation between 'engine-size' and 'price' and see it's 
+approximately 0.87
+'''
+print(df[["engine-size", "price"]].corr())
+
+#Highway mpg is a potential predictor variable of price
+sns.regplot(x="highway-mpg", y="price", data=df)
+#NOTE! Comment out the previous plottings for plotting correctly.
+
+'''
+
+As the highway-mpg goes up, the price goes down: this indicates an 
+inverse/negative relationship between these two variables. Highway mpg could 
+potentially be a predictor of price.
+
+We can examine the correlation between 'highway-mpg' and 'price' and see 
+it's approximately -0.704
+'''
+
+print(df[['highway-mpg', 'price']].corr())
+
+  
